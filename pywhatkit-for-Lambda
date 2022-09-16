@@ -1,0 +1,14 @@
+import pywhatkit
+import pyautogui
+import datetime
+import time
+
+def send_whatsapp_msg(v_mobile, v_country_code, v_msg):
+    
+    pywhatkit.sendwhatmsg_instantly(v_country_code+v_mobile, v_msg, 10)
+    
+    time.sleep(2)   # Give 2 seconds time before pressing ENTER Key
+    pyautogui.press("enter")    # Press ENTER Key
+    pyautogui.press("enter")    # Press ENTER Key again for safer side
+    
+    return True
